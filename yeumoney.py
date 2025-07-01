@@ -52,3 +52,14 @@ elif type == 'v9bet':
         print(f"code: {code}")
     else:
         print("ko tìm thấy mã")
+
+elif type == '':
+    response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://bk8ze.com/cach-choi-bai-catte&loai_traffic=https://bk8ze.com/&clk=1000')
+    html = response.text
+    match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+    if match:
+        code = match.group(1)
+        print(f"code: {code}")
+    else:
+        print("ko tìm thấy mã")
+
