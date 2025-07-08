@@ -73,6 +73,16 @@ def k():
         else:
             return jsonify({'error': 'cannot get code'}), 400
 
+    if type == 'vn88':
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=bodeptrai&url=https://vn88no.com/keo-chap-1-trai-la-gi&loai_traffic=https://vn88no.com/&clk=1000')
+        html = response.text
+        match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+        if match:
+            code = match.group(1)
+            return jsonify({'code': code}), 200
+        else:
+            return jsonify({'error': 'cannot get code'}), 400
+
 
 
     
