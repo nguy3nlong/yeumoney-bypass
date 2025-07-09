@@ -74,4 +74,12 @@ elif type == 'bk8':
         print(f"code: {code}")
     else:
         print("ko tìm thấy mã")
-
+elif type == '88betag':
+    response = requests.post(f'https://traffic-user.net/GET_MD.php?codexnd=bomaylavua&url=https://88betag.com/keo-chau-a-la-gi&loai_traffic=https://88betag.com/&clk=1000')
+    html = response.text
+    match = re.search(r'<span id="layma_me_tfudirect"[^>]*>\s*(\d+)\s*</span>', html)
+    if match:
+        code = match.group(1)
+        print(f"code: {code}")
+    else:
+        print("ko tìm thấy mã")
