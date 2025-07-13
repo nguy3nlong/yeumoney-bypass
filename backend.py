@@ -54,7 +54,7 @@ def k():
             return jsonify({'error': 'cannot get code'}), 400
 
     if type == 'v9bet':
-        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betgz.com/ca-cuoc-bong-ro-ao/&loai_traffic=https://v9betgz.com/&clk=1000')
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betxa.com/cach-choi-craps&loai_traffic=https://v9betxa.com/&clk=1000')
         html = response.text
         match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
         if match:
