@@ -74,7 +74,7 @@ def k():
             return jsonify({'error': 'cannot get code'}), 400
 
     if type == 'vn88':
-        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=deobiet&url=https://vn88no.com/game-quan-ly-bong-da-chat-luong&loai_traffic=https://vn88no.com/&clk=1000')
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=deobiet&url=https://vn88ie.com/cach-choi-mega-6-45&loai_traffic=https://vn88ie.com/&clk=1000')
         html = response.text
         match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
         if match:
