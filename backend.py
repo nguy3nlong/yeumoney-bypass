@@ -4,6 +4,14 @@ import re
 
 app = Flask(__name__)
 
+
+domains = [
+    "https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betdi.com/cuoc-thang-ap-dao-la-gi&loai_traffic=https://v9betdi.com/&clk=1000",
+    "https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betho.com/ca-cuoc-bong-ro-ao&loai_traffic=https://v9betho.com/&clk=1000",
+    "https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betxa.com/cach-choi-craps&loai_traffic=https://v9betxa.com/&clk=1000",
+]
+
+success = False
 @app.route('/bypass', methods=['POST'])
 def k():
     json = request.get_json()
@@ -54,13 +62,22 @@ def k():
             return jsonify({'error': 'cannot get code'}), 400
 
     if type == 'v9bet':
-        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betdi.com/cuoc-thang-ap-dao-la-gi&loai_traffic=https://v9betdi.com/&clk=1000')
-        html = response.text
-        match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
-        if match:
-            code = match.group(1)
-            return jsonify({'code': code}), 200
-        else:
+        for domain in domains:
+            try:
+                response = requests.post(domain)
+                if response.ok:
+                    html = response.text
+                    match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+                    success = True
+                    if match:
+                        code = match.group(1)
+                        return jsonify({'code': code}), 200
+                    else:
+                        return jsonify({'error': 'cannot get code'}), 400
+            except requests.RequestException as e:
+                return jsonify({'error': 'cannot get code'}), 400
+
+        if not success:
             return jsonify({'error': 'cannot get code'}), 400
 
     if type == 'bk8':
