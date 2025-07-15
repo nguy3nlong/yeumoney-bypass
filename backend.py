@@ -54,7 +54,7 @@ def k():
             return jsonify({'error': 'cannot get code'}), 400
 
     if type == 'v9bet':
-        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betho.com/ca-cuoc-the-thao-ao&loai_traffic=https://v9betho.com/&clk=1000')
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betdi.com/cuoc-thang-ap-dao-la-gi&loai_traffic=https://v9betdi.com/&clk=1000')
         html = response.text
         match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
         if match:
@@ -64,7 +64,7 @@ def k():
             return jsonify({'error': 'cannot get code'}), 400
 
     if type == 'bk8':
-        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://bk8ze.com/cach-choi-bai-catte&loai_traffic=https://bk8ze.com/&clk=1000')
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://bk8xo.com/lo-ba-cang-la-gi&loai_traffic=https://bk8xo.com/&clk=1000')
         html = response.text
         match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
         if match:
