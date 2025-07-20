@@ -93,7 +93,7 @@ elif type == 'w88abc' or type == '188.166.185.213':
     else:
         print("ko tìm thấy mã")
 
-elif type == 'v8betlg':
+elif type == 'v9betlg':
     response = requests.post(f'https://traffic-user.net/GET_MD.php?codexnd=bomaylavua&url=https://v9betlg.com/phuong-phap-cuoc-flat-betting&loai_traffic=https://v9betlg.com/&clk=1000')
     html = response.text
     match = re.search(r'<span id="layma_me_tfudirect"[^>]*>\s*(\d+)\s*</span>', html)
