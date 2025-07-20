@@ -54,8 +54,7 @@ elif type == 'v9bet':
         print("ko tìm thấy mã")
 
 elif type == 'vn88':
-    response = requests.post(f'
-https://traffic-user.net/GET_MA.php?codexn=bomaydeptrai&url=https://vn88no.com/keo-chap-1-trai-la-gi&loai_traffic=https://vn88no.com/&clk=1000')
+    response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=bomaydeptrai&url=https://vn88no.com/keo-chap-1-trai-la-gi&loai_traffic=https://vn88no.com/&clk=1000')
     html = response.text
     match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
     if match:
@@ -76,6 +75,46 @@ elif type == 'bk8':
         print("ko tìm thấy mã")
 elif type == '88betag':
     response = requests.post(f'https://traffic-user.net/GET_MD.php?codexnd=bomaylavua&url=https://88betag.com/keo-chau-a-la-gi&loai_traffic=https://88betag.com/&clk=1000')
+    html = response.text
+    match = re.search(r'<span id="layma_me_tfudirect"[^>]*>\s*(\d+)\s*</span>', html)
+    if match:
+        code = match.group(1)
+        print(f"code: {code}")
+    else:
+        print("ko tìm thấy mã")
+
+elif type == 'w88abc' or type == '188.166.185.213':
+    response = requests.post(f'https://traffic-user.net/GET_MD.php?codexnd=bomaylavua&url=https://w88abc.com/cach-choi-ca-cuoc-lien-quan-mobile&loai_traffic=https://w88abc.com/&clk=1000')
+    html = response.text
+    match = re.search(r'<span id="layma_me_tfudirect"[^>]*>\s*(\d+)\s*</span>', html)
+    if match:
+        code = match.group(1)
+        print(f"code: {code}")
+    else:
+        print("ko tìm thấy mã")
+
+elif type == 'v8betlg':
+    response = requests.post(f'https://traffic-user.net/GET_MD.php?codexnd=bomaylavua&url=https://v9betlg.com/phuong-phap-cuoc-flat-betting&loai_traffic=https://v9betlg.com/&clk=1000')
+    html = response.text
+    match = re.search(r'<span id="layma_me_tfudirect"[^>]*>\s*(\d+)\s*</span>', html)
+    if match:
+        code = match.group(1)
+        print(f"code: {code}")
+    else:
+        print("ko tìm thấy mã")
+
+elif type == 'bk8xo':
+    response = requests.post(f'https://traffic-user.net/GET_MD.php?codexnd=bomaylavua&url=https://bk8xo.com/lo-ba-cang-la-gi&loai_traffic=https://bk8xo.com/&clk=1000')
+    html = response.text
+    match = re.search(r'<span id="layma_me_tfudirect"[^>]*>\s*(\d+)\s*</span>', html)
+    if match:
+        code = match.group(1)
+        print(f"code: {code}")
+    else:
+        print("ko tìm thấy mã")
+
+elif type == 'vn88ie':
+    response = requests.post(f'https://traffic-user.net/GET_MD.php?codexnd=bomaylavua&url=https://vn88ie.com/cach-nuoi-lo-khung&loai_traffic=https://vn88ie.com/&clk=1000')
     html = response.text
     match = re.search(r'<span id="layma_me_tfudirect"[^>]*>\s*(\d+)\s*</span>', html)
     if match:
