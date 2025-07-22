@@ -14,7 +14,7 @@ if type == 'm88':
         print("ko tìm thấy mã")
 
 elif type == 'fb88':
-    response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://fb88mg.com/ty-le-cuoc-hong-kong-la-gi&loai_traffic=https://fb88mg.com/&clk=1000')
+    response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://fb88dq.com/cach-choi-ca-cuoc-golf&loai_traffic=https://fb88dq.com/&clk=1000')
     html = response.text
     match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
     if match:
