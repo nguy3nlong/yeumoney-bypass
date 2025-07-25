@@ -34,7 +34,7 @@ elif type == '188bet':
         print("ko tìm thấy mã")
 
 elif type == 'w88':
-    response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://188.166.185.213/tim-hieu-khai-niem-3-bet-trong-poker-la-gi&loai_traffic=https://188.166.185.213/&clk=1000')
+    response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://165.22.63.250/soi-keo-tottenham-vs-crystal-palace-02-03-2024&loai_traffic=https://165.22.63.250/&clk=1000')
     html = response.text
     match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
     if match:
